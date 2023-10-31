@@ -21,7 +21,8 @@ public:
     ~Sayilar();
     void add(Sayi* sayi);
     void printList();
-
+    void hepsiIcinTekBasamaklariAyarla();
+    void hepsiIcinBasamaklariTersle();
 };
 
 

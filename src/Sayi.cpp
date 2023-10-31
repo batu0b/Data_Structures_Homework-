@@ -143,6 +143,66 @@ Sayi* Sayi::getNext() const {
 	return this->next;
 }
 
+void Sayi::tekleriBasaAl(){
+	  if (!first) {
+            return;
+        }
+
+        Basamak* tekler_head = nullptr;
+        Basamak* tekler_tail = nullptr;
+        Basamak* ciftler_head = nullptr;
+        Basamak* ciftler_tail = nullptr;
+
+        Basamak* current = first;
+        while (current) {
+            Basamak* next_node = current->getNext();
+            current->setNext(nullptr);
+
+            if (current->getData() % 2 == 1) {
+                if (!tekler_head) {
+                    tekler_head = current;
+                    tekler_tail = current;
+                } else {
+                    tekler_tail->setNext(current);
+                    tekler_tail = current;
+                }
+            } else {
+                if (!ciftler_head) {
+                    ciftler_head = current;
+                    ciftler_tail = current;
+                } else {
+                    ciftler_tail->setNext(current);
+                    ciftler_tail = current;
+                }
+            }
+
+            current = next_node;
+        }
+
+        if (tekler_head) {
+            tekler_tail->setNext(ciftler_head);
+            first = tekler_head;
+        } else {
+            first = ciftler_head;
+        }
+
+}
+
+void Sayi::basamaklariTersle(){
+	Basamak* prevNode = nullptr;
+    Basamak* current = first;
+    Basamak* nextNode = nullptr;
+
+    while (current != nullptr) {
+        nextNode = current->getNext();
+        current->setNext(prevNode);
+        prevNode = current;
+        current = nextNode;
+    }
+
+    first = prevNode; 
+}
+
 
 
 

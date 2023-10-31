@@ -35,17 +35,19 @@ void menuGoster(Sayilar& dizi){
     {
     case 1:
         clear();
-        cout<<"Secenek 1"<<endl;
+        dizi.hepsiIcinTekBasamaklariAyarla();
+        cout<<"Secenek 1 SECILDI "<<endl;
         return menuGoster(dizi);
         break;
     case 2:
         clear();
-        cout<<"Secenek 2"<<endl;
+        dizi.hepsiIcinBasamaklariTersle();
+        cout<<"Secenek 2 SECILDI "<<endl;
          return menuGoster(dizi);
         break;
     case 3:
         clear();
-        cout<<"Secenek 3"<<endl;
+        cout<<"Secenek 3 SECILDI "<<endl;
          return menuGoster(dizi);
         break;
     
@@ -63,6 +65,16 @@ int main()
     Sayilar* sayilar = new Sayilar();
     DosyaOku dosya("../sayilar.txt");
     dosya.dosyaOku(*sayilar);
+    // Sayi* sayi = new Sayi();
+    // sayi->add(2);
+    // sayi->add(4);
+    // sayi->add(1);
+    // sayi->add(6);
+    // sayi->add(7);
+    
+    // sayi->tekleriBasaAl();
+    // sayi->printNumber();
+    // cout<<endl<<endl;
     menuGoster(*sayilar);
     int deger;
     cin>>deger;

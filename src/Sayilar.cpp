@@ -52,3 +52,23 @@ void Sayilar::printList(){
     }
     
 }
+
+void Sayilar::hepsiIcinTekBasamaklariAyarla(){
+	Sayi* tempNode = first;
+	while (tempNode != 0)
+	{
+		tempNode->tekleriBasaAl();
+		tempNode = tempNode->getNext();
+	}
+	
+}
+
+void Sayilar::hepsiIcinBasamaklariTersle(){
+	Sayi* tempNode = first;
+	while (tempNode != 0)
+	{
+		tempNode->basamaklariTersle();
+		tempNode = tempNode->getNext();
+	}
+	
+}

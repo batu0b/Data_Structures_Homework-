@@ -24,5 +24,7 @@ public:
     int calculateNumber();
     void setNext(Sayi* sayi);
     Sayi* getNext() const;
+    void tekleriBasaAl();
+    void basamaklariTersle();
 };
 #endif 
