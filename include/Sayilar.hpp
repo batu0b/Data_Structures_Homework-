@@ -24,7 +24,7 @@ public:
     void hepsiIcinTekBasamaklariAyarla();
     void hepsiIcinBasamaklariTersle();
     void enBuyukYazdir();
-    void enBuyukSayyCikar();
+    void enBuyukSayiCikar();
 };
 
 

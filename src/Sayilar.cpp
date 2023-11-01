@@ -81,3 +81,27 @@ void Sayilar::enBuyukYazdir(){
 		tempNode = tempNode->getNext();
 	}
 }
+
+void Sayilar::enBuyukSayiCikar(){
+	if (first == nullptr) {
+        return;
+    }
+    Sayi* current = first;
+    Sayi* en_buyuk_sayi = first;
+    while (current != nullptr) {
+        if (current->calculateNumber() > en_buyuk_sayi->calculateNumber()) {
+            en_buyuk_sayi = current;
+        }
+        current = current->getNext();
+    }
+    if (en_buyuk_sayi == first) {
+        first = first->getNext();
+    } else {
+        current = first;
+        while (current->getNext() != en_buyuk_sayi) {
+            current = current->getNext();
+        }
+        current->setNext(en_buyuk_sayi->getNext());
+    }
+    delete en_buyuk_sayi;
+}

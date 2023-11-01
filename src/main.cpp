@@ -29,7 +29,7 @@ void clear()
 void menuGoster(Sayilar& dizi){
     dizi.printList();
     cout<<endl<<endl;
-    cout<<"1) TEK BASAMAKLARI BASA AL \n2) BASAMAKLARI TERSLE \n3) EN BUYUK BASAMAKLARI GOSTER \n4) LISTEYI SIFIRLA \n\nTERCIHINIZ: ";
+    cout<<"1) TEK BASAMAKLARI BASA AL \n2) BASAMAKLARI TERSLE \n3) EN BUYUK BASAMAKLARI GOSTER \n4) LISTEDEN EN BUYUK SAYIYI CIKAR \n5) LISTEYI SIFIRLA \n\nTERCIHINIZ: ";
     int secenek;
     cin>>secenek;
     switch (secenek)
@@ -54,6 +54,13 @@ void menuGoster(Sayilar& dizi){
         break;
     
     case 4:
+        clear();
+        dizi.enBuyukSayiCikar();
+        cout<<"Secenek 4 SECILDI "<<endl;
+        return menuGoster(dizi);
+        break;
+
+    case 5:
         clear();
         delete &dizi;
         main();
