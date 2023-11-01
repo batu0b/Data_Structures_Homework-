@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 using namespace std;
+
 /** 
 * @file Basamak.cpp;
 * @description uygulamamizin Basamaklari bir ara tutan Sayilar classina ait LinkedList govdesi
@@ -203,6 +204,38 @@ void Sayi::basamaklariTersle(){
     first = prevNode; 
 }
 
+void Sayi::enBuyukYazdr(){
+	if (this->first == 0) {
+        return;
+    }
+
+    int en_buyuk = first->getData();
+    Basamak* current = first->getNext();
+    Basamak* en_buyuk_dugum = first;
+
+    while (current != 0) {
+        int rakam = current->getData();
+        if (rakam >= en_buyuk) {
+            en_buyuk = rakam;
+            en_buyuk_dugum = current;
+        }
+        current = current->getNext();
+    }
+
+    Basamak* temp = this->first;
+    while (temp != 0) {
+        Basamak* silinecek = temp;
+        temp = temp->getNext();
+        if (silinecek != en_buyuk_dugum) {
+            delete silinecek;
+			this->length -= 1;
+        }
+    }
+
+    first = en_buyuk_dugum;
+	first->setNext(0);
+
+}
 
 
 

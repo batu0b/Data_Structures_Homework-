@@ -23,6 +23,8 @@ public:
     void printList();
     void hepsiIcinTekBasamaklariAyarla();
     void hepsiIcinBasamaklariTersle();
+    void enBuyukYazdir();
+    void enBuyukSayyCikar();
 };
 
 

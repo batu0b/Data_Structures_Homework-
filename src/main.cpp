@@ -13,6 +13,7 @@ using namespace std;
 * @date 26.10.2023
 * @author Batuhan Bahayetmez - g211210043 / batuhan.bahayetmez@ogr.sakarya.edu.tr
 */
+int main();
 
 void clear()
 {
@@ -28,7 +29,7 @@ void clear()
 void menuGoster(Sayilar& dizi){
     dizi.printList();
     cout<<endl<<endl;
-    cout<<"1) TEK BASAMAKLARI BASA AL \n2) BASAMAKLARI TERSLE \n3) EN BUYUK CIKAR \n\nTERCIHINIZ: ";
+    cout<<"1) TEK BASAMAKLARI BASA AL \n2) BASAMAKLARI TERSLE \n3) EN BUYUK BASAMAKLARI GOSTER \n4) LISTEYI SIFIRLA \n\nTERCIHINIZ: ";
     int secenek;
     cin>>secenek;
     switch (secenek)
@@ -47,10 +48,17 @@ void menuGoster(Sayilar& dizi){
         break;
     case 3:
         clear();
+        dizi.enBuyukYazdir();
         cout<<"Secenek 3 SECILDI "<<endl;
          return menuGoster(dizi);
         break;
     
+    case 4:
+        clear();
+        delete &dizi;
+        main();
+        break;
+
     default:
         clear();
         return menuGoster(dizi);
@@ -58,7 +66,6 @@ void menuGoster(Sayilar& dizi){
     }
 
 }
-
 
 int main()
 {

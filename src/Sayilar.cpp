@@ -72,3 +72,12 @@ void Sayilar::hepsiIcinBasamaklariTersle(){
 	}
 	
 }
+
+void Sayilar::enBuyukYazdir(){
+	Sayi* tempNode = first;
+	while (tempNode != 0)
+	{
+		tempNode->enBuyukYazdr();
+		tempNode = tempNode->getNext();
+	}
+}

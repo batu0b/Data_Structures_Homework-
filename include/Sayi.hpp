@@ -26,5 +26,6 @@ public:
     Sayi* getNext() const;
     void tekleriBasaAl();
     void basamaklariTersle();
+    void enBuyukYazdr();
 };
 #endif 
