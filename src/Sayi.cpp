@@ -61,27 +61,6 @@ int Sayi::calculateNumber(){
 	return total;	
 } 
 
-void Sayi::removeLastNode(){
-    if (first==0)
-		{
-			return;
-		}
-		if (first->getNext()==0)
-		{
-			delete first;
-			first = 0;
-			return;
-		}
-		Basamak* tempNode = first;
-		while (tempNode->getNext()->getNext()!=0)
-		{
-			tempNode = tempNode->getNext();
-		}
-		delete tempNode->getNext();
-		tempNode->setNext(0);
-		this->length--;
-}
-
 void Sayi::printNumber(){
 	int lineWidth = 20;
 	string line = "----------";
@@ -203,40 +182,6 @@ void Sayi::basamaklariTersle(){
 
     first = prevNode; 
 }
-
-void Sayi::enBuyukYazdr(){
-	if (this->first == 0) {
-        return;
-    }
-
-    int en_buyuk = first->getData();
-    Basamak* current = first->getNext();
-    Basamak* en_buyuk_dugum = first;
-
-    while (current != 0) {
-        int rakam = current->getData();
-        if (rakam >= en_buyuk) {
-            en_buyuk = rakam;
-            en_buyuk_dugum = current;
-        }
-        current = current->getNext();
-    }
-
-    Basamak* temp = this->first;
-    while (temp != 0) {
-        Basamak* silinecek = temp;
-        temp = temp->getNext();
-        if (silinecek != en_buyuk_dugum) {
-            delete silinecek;
-			this->length -= 1;
-        }
-    }
-
-    first = en_buyuk_dugum;
-	first->setNext(0);
-
-}
-
 
 
 

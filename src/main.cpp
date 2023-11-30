@@ -1,8 +1,5 @@
 #include <iostream>
 #include "../include/DosyaOku.hpp"
-#include "../include/Sayi.hpp"
-#include "../include/DinamikDizi.hpp"
-#include "../include/Sayilar.hpp"
 using namespace std;
 
 /** 
@@ -26,10 +23,10 @@ void clear()
 #endif
 }
 
-void menuGoster(Sayilar& dizi){
+void menuGoster(SayilarListesi& dizi){
     dizi.printList();
     cout<<endl<<endl;
-    cout<<"1) TEK BASAMAKLARI BASA AL \n2) BASAMAKLARI TERSLE \n3) EN BUYUK BASAMAKLARI GOSTER \n4) LISTEDEN EN BUYUK SAYIYI CIKAR \n5) LISTEYI SIFIRLA \n\nTERCIHINIZ: ";
+    cout<<"1) TEK BASAMAKLARI BASA AL \n2) BASAMAKLARI TERSLE  \n3) EN BUYUK CIKAR \n4) LISTEYI SIFIRLA \n\nTERCIHINIZ: ";
     int secenek;
     cin>>secenek;
     switch (secenek)
@@ -48,19 +45,12 @@ void menuGoster(Sayilar& dizi){
         break;
     case 3:
         clear();
-        dizi.enBuyukYazdir();
-        cout<<"Secenek 3 SECILDI "<<endl;
-         return menuGoster(dizi);
-        break;
-    
-    case 4:
-        clear();
         dizi.enBuyukSayiCikar();
         cout<<"Secenek 4 SECILDI "<<endl;
         return menuGoster(dizi);
         break;
 
-    case 5:
+    case 4:
         clear();
         delete &dizi;
         main();
@@ -76,19 +66,9 @@ void menuGoster(Sayilar& dizi){
 
 int main()
 {
-    Sayilar* sayilar = new Sayilar();
+    SayilarListesi* sayilar = new SayilarListesi();
     DosyaOku dosya("../sayilar.txt");
     dosya.dosyaOku(*sayilar);
-    // Sayi* sayi = new Sayi();
-    // sayi->add(2);
-    // sayi->add(4);
-    // sayi->add(1);
-    // sayi->add(6);
-    // sayi->add(7);
-    
-    // sayi->tekleriBasaAl();
-    // sayi->printNumber();
-    // cout<<endl<<endl;
     menuGoster(*sayilar);
     int deger;
     cin>>deger;

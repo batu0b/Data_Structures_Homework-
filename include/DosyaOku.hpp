@@ -1,7 +1,7 @@
 #ifndef DOSYAOKU_H
 #define DOSYAOKU_H
 #include <string>
-#include "./Sayilar.hpp"
+#include "./SayilarListesi.hpp"
 using namespace std;
 /** 
 * @file DosyaOku.hpp;
@@ -15,7 +15,7 @@ using namespace std;
 class DosyaOku {
 public:
     DosyaOku(const string& dosyaAdi);
-    void dosyaOku( Sayilar& dizi) const;
+    void dosyaOku( SayilarListesi& dizi) const;
 
 private:
    string dosyaAdi;

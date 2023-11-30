@@ -1,6 +1,5 @@
 #ifndef BASAMAK_H
 #define BASAMAK_H
-using namespace std;
 /** 
 * @file Basamak.cpp;
 * @description uygulamamizin Basamaklari belirttigi Node sinfininin  basligi

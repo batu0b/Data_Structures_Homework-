@@ -19,13 +19,11 @@ public:
     Sayi();
      ~Sayi();
     void add(int number);
-    void removeLastNode();
     void printNumber();
     int calculateNumber();
     void setNext(Sayi* sayi);
     Sayi* getNext() const;
     void tekleriBasaAl();
     void basamaklariTersle();
-    void enBuyukYazdr();
 };
 #endif 

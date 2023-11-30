@@ -1,7 +1,6 @@
-#ifndef SAYILAR_H
-#define SAYILAR_H
+#ifndef SAYILARLISTESI_H
+#define SAYILARLISTESI_H
 #include "./Sayi.hpp"
-using namespace std;
 /** 
 * @file main.cpp;
 * @description uygulamimizda sayi degerlerini tutacagimiz linkedlist basligi
@@ -11,19 +10,18 @@ using namespace std;
 * @author Batuhan Bahayetmez - g211210043 / batuhan.bahayetmez@ogr.sakarya.edu.tr
 */
 
-class Sayilar
+class SayilarListesi
 {
 private:
    Sayi* first;
    int lenght;
 public:
-    Sayilar();
-    ~Sayilar();
+    SayilarListesi();
+    ~SayilarListesi();
     void add(Sayi* sayi);
     void printList();
     void hepsiIcinTekBasamaklariAyarla();
     void hepsiIcinBasamaklariTersle();
-    void enBuyukYazdir();
     void enBuyukSayiCikar();
 };
 

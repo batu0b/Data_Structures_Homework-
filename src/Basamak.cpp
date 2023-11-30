@@ -15,7 +15,6 @@ Basamak::Basamak(int data){
     this->next = nullptr;
 }
 
-
 int Basamak::getData() const{
     return this->data;
 }

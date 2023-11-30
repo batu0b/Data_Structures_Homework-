@@ -1,7 +1,7 @@
 #include "../include/DosyaOku.hpp"
 #include <iostream>
 #include <fstream>
-#include "../include/Sayilar.hpp"
+#include "../include/SayilarListesi.hpp"
 #include "../include/Sayi.hpp"
 using namespace std;
 
@@ -16,7 +16,7 @@ using namespace std;
 
 DosyaOku::DosyaOku(const string& dosyaAdi) : dosyaAdi(dosyaAdi) {}
 
-void DosyaOku::dosyaOku(Sayilar& dizi) const {
+void DosyaOku::dosyaOku(SayilarListesi& dizi) const {
     ifstream file(dosyaAdi);
     if (file.is_open()) {
         int number;

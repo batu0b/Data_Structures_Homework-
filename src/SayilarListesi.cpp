@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/Sayilar.hpp"
+#include "../include/SayilarListesi.hpp"
 using namespace std;
 
 /** 
@@ -11,12 +11,12 @@ using namespace std;
 * @author Batuhan Bahayetmez - g211210043 / batuhan.bahayetmez@ogr.sakarya.edu.tr
 */
 
-Sayilar::Sayilar(){
+SayilarListesi::SayilarListesi(){
     this->first=nullptr;
     this->lenght=0;
 }
 
-Sayilar::~Sayilar(){
+SayilarListesi::~SayilarListesi(){
     Sayi* tempNode = this->first;
     while (tempNode != 0)
 		{
@@ -26,13 +26,12 @@ Sayilar::~Sayilar(){
 		}
 }
 
-void Sayilar::add(Sayi* sayi){
+void SayilarListesi::add(Sayi* sayi){
     if (first == 0)
 		{
 			first = sayi;
 			return;
 		}
-		
         Sayi* tempNode = first;
 		while (tempNode->getNext() != 0)
 		{
@@ -42,7 +41,7 @@ void Sayilar::add(Sayi* sayi){
 		this->lenght+=1;
 }
 
-void Sayilar::printList(){
+void SayilarListesi::printList(){
     Sayi* tempNode = first;
     while (tempNode != 0)
     {
@@ -53,7 +52,7 @@ void Sayilar::printList(){
     
 }
 
-void Sayilar::hepsiIcinTekBasamaklariAyarla(){
+void SayilarListesi::hepsiIcinTekBasamaklariAyarla(){
 	Sayi* tempNode = first;
 	while (tempNode != 0)
 	{
@@ -63,7 +62,7 @@ void Sayilar::hepsiIcinTekBasamaklariAyarla(){
 	
 }
 
-void Sayilar::hepsiIcinBasamaklariTersle(){
+void SayilarListesi::hepsiIcinBasamaklariTersle(){
 	Sayi* tempNode = first;
 	while (tempNode != 0)
 	{
@@ -73,16 +72,7 @@ void Sayilar::hepsiIcinBasamaklariTersle(){
 	
 }
 
-void Sayilar::enBuyukYazdir(){
-	Sayi* tempNode = first;
-	while (tempNode != 0)
-	{
-		tempNode->enBuyukYazdr();
-		tempNode = tempNode->getNext();
-	}
-}
-
-void Sayilar::enBuyukSayiCikar(){
+void SayilarListesi::enBuyukSayiCikar(){
 	if (first == nullptr) {
         return;
     }
